@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using WxTools.Editor;
 
 namespace WxTools.IO
 {

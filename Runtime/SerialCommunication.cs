@@ -6,7 +6,6 @@ using System.IO.Ports;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
-using WxTools.Editor;
 
 namespace WxTools.IO
 {

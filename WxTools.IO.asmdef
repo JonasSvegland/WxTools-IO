@@ -1,9 +1,7 @@
 {
     "name": "WxTools.IO",
     "rootNamespace": "WxTools.IO",
-    "references": [
-        "GUID:c6c47e619399dd2438291c373d1446a6"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
