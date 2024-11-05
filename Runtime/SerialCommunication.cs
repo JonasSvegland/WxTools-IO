@@ -24,6 +24,7 @@ namespace WxTools.IO
             return "v1.1.0";
         }
 
+
         [Space()]
         //[ReadOnly]
         [SerializeField]
@@ -63,12 +64,13 @@ namespace WxTools.IO
         [SerializeField]
         public int arduinoMaximumOutputValue = 1000;
 
-      
 
 
+#if (NET_UNITY_4_8)
         private Queue<string> sendBuffer;
         private SerialPort port;
 
+#endif
         /// <summary>
         /// SerialDataRecievedEventHandler
         /// </summary>
@@ -81,6 +83,7 @@ namespace WxTools.IO
         /// </summary>
         public event SerialDataRecievedEventHandler DataRecieved;
 
+#if (NET_UNITY_4_8)
         void Awake()
         {
             if (sendBuffer == null)
@@ -183,16 +186,7 @@ namespace WxTools.IO
                 Debug.Log("Port opened successfully");
         }
 
-        /// <summary>
-        /// Enqueue data to be written to the SerialPort
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="data"></param>
-        public void SendData(SerialDataTransciever sender, string data)
-        {
-            if (sendBuffer != null)
-                sendBuffer.Enqueue(data);
-        }
+       
         /// <summary>
         /// Discards incoming data in intervals
         /// </summary>
@@ -308,6 +302,19 @@ namespace WxTools.IO
             }
 
          
+        }
+#endif
+        /// <summary>
+        /// Enqueue data to be written to the SerialPort
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="data"></param>
+        public void SendData(SerialDataTransciever sender, string data)
+        {
+#if(NET_UNITY_4_8)
+            if (sendBuffer != null)
+                sendBuffer.Enqueue(data);
+#endif
         }
     }
 }
