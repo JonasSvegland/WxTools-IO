@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-#if(NET_UNITY_4_8)
+#if(NET_UNITY_4_8 || NET_4_6)
 using System.IO.Ports;
 #endif
 using System.Linq;
@@ -68,7 +68,7 @@ namespace WxTools.IO
 
 
 
-#if (NET_UNITY_4_8)
+#if(NET_UNITY_4_8 || NET_4_6)
         private Queue<string> sendBuffer;
         private SerialPort port;
 
@@ -85,7 +85,7 @@ namespace WxTools.IO
         /// </summary>
         public event SerialDataRecievedEventHandler DataRecieved;
 
-#if (NET_UNITY_4_8)
+#if(NET_UNITY_4_8 || NET_4_6)
         void Awake()
         {
             if (sendBuffer == null)
@@ -313,7 +313,7 @@ namespace WxTools.IO
         /// <param name="data"></param>
         public void SendData(SerialDataTransciever sender, string data)
         {
-#if(NET_UNITY_4_8)
+#if(NET_UNITY_4_8 || NET_4_6)
             if (sendBuffer != null)
                 sendBuffer.Enqueue(data);
 #endif
