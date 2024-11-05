@@ -247,7 +247,7 @@ namespace WxTools.IO
                     else
                         DataRecieved(this, latest);
                 }
-                catch (TimeoutException e)
+                catch (TimeoutException)
                 {        
                     //DO nothing
                 }
