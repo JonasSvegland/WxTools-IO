@@ -26,7 +26,7 @@ namespace WxTools.IO
         }
 
         [Space()]
-        [ReadOnly]
+        //[ReadOnly]
         [SerializeField]
         private string version = SerialCommunication.GetProductVersion();
 

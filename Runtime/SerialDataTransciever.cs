@@ -42,7 +42,7 @@ namespace WxTools.IO
         protected int numberOfHistoryValues = 0;
 
         
-        [ReadOnly]
+        //[ReadOnly]
         [SerializeField]
         protected int lastIntegerValue = 0;
 
