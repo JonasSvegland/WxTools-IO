@@ -7,6 +7,18 @@
 	"dependencies": {
     	"com.jonassvegland.wxtools-editor": "1.0.0"
  	},
+	 "samples": [
+        {
+            "displayName": "Basic Usage",
+            "description": "Contains sample for basic usage of the SerialCommunicator class",
+            "path": "Samples~/BasicUsage"
+        },
+        {
+            "displayName": "Arduino Code",
+            "description": "Contains sample of the arduino code for serial communication",
+            "path": "Samples~/Arduino"
+        }
+    ],
 	"author": {
 		"name": "Jonas Svegland",
 		"ulr": ""
