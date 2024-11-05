@@ -1,6 +1,6 @@
 {
 	"name": "com.jonassvegland.wxtools-io",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"displayName": "WxTools IO",
 	"description": "Tools for communication.",
 	"unity": "2022.3",
