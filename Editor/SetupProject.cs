@@ -3,7 +3,8 @@ using UnityEditor;
 using UnityEditor.Compilation;
 
 namespace WxTools.IO
-{ 
+{
+    [InitializeOnLoad]
     public class SetupProject
     {
         [MenuItem("WxTools/Setup project for serial communication")]
