@@ -1,0 +1,11 @@
+{
+	"name": "com.jonassvegland.wxtools-io",
+	"version": "1.0.0",
+	"displayName": "WxTools IO",
+	"description": "Tools for communication.",
+	"unity": "2022.3",
+	"author": {
+		"name": "Jonas Svegland",
+		"ulr": ""
+	}
+}
