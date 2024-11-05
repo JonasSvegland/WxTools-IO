@@ -4,6 +4,9 @@
 	"displayName": "WxTools IO",
 	"description": "Tools for communication.",
 	"unity": "2022.3",
+	"dependencies": {
+    	"com.jonassvegland.wxtools-editor": "git+https://github.com/JonasSvegland/WxTools-Editor.git"
+ 	},
 	 "samples": [
         {
             "displayName": "Basic Usage",
