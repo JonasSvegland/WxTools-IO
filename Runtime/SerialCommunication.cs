@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+#if(NET_UNITY_4_8)
 using System.IO.Ports;
+#endif
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
