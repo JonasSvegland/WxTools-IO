@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.Compilation;
 
 namespace WxTools.IO
 {
@@ -10,20 +9,30 @@ namespace WxTools.IO
         [MenuItem("WxTools/Setup project for serial communication")]
         private static void Setup()
         {
-            const string projectSettingsAssetPath = "ProjectSettings/ProjectSettings.asset";
-            SerializedObject projectSettings = new SerializedObject(UnityEditor.AssetDatabase.LoadAllAssetsAtPath(projectSettingsAssetPath)[0]);
-            SerializedProperty mode = projectSettings.FindProperty("apiCompatibilityLevel");
+            /*  const string projectSettingsAssetPath = "ProjectSettings/ProjectSettings.asset";
+              SerializedObject projectSettings = new SerializedObject(UnityEditor.AssetDatabase.LoadAllAssetsAtPath(projectSettingsAssetPath)[0]);
+              SerializedProperty mode = projectSettings.FindProperty("apiCompatibilityLevel");
 
-            if (mode.intValue != (int)ApiCompatibilityLevel.NET_Unity_4_8)
+              if (mode.intValue != (int)ApiCompatibilityLevel.NET_Unity_4_8)
+              {
+                  Debug.Log("Modifying project settings");
+                  Debug.Log("Changing ApiCompatibilityLevel to .NET Framework");
+                  mode.intValue = (int)ApiCompatibilityLevel.NET_Unity_4_8;
+                  projectSettings.ApplyModifiedProperties();
+                  CompilationPipeline.RequestScriptCompilation();
+              }
+              else
+                  Debug.Log("No need to modify project settings");*/
+
+            // Kontrollera och ändra API-nivån om den inte är satt till .NET Framework
+            if (PlayerSettings.GetApiCompatibilityLevel(BuildTargetGroup.Standalone) != ApiCompatibilityLevel.NET_Unity_4_8)
             {
-                Debug.Log("Modifying project settings");
-                Debug.Log("Changing ApiCompatibilityLevel to .NET Framework");
-                mode.intValue = (int)ApiCompatibilityLevel.NET_Unity_4_8;
-                projectSettings.ApplyModifiedProperties();
-                CompilationPipeline.RequestScriptCompilation();
+                PlayerSettings.SetApiCompatibilityLevel(BuildTargetGroup.Standalone, ApiCompatibilityLevel.NET_Unity_4_8);
+                Debug.Log("API Compatibility Level ändrad till .NET Framework");
+
+                // För att säkerställa att Unity tar hänsyn till förändringen direkt
+                AssetDatabase.Refresh();
             }
-            else
-                Debug.Log("No need to modify project settings");
 
         }
     }
