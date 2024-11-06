@@ -1,8 +1,8 @@
 {
 	"name": "com.jonassvegland.wxtools-io",
-	"version": "1.0.1",
+	"version": "1.0.4",
 	"displayName": "WxTools IO",
-	"description": "Tools for communication.",
+	"description": "Tools for communication. ApiCompatibilityLevel needs to be set to .NET Framework (NET_Unity_4_8) because this package use the System.IO.Ports that don't exist in the .NET Standard 2.1",
 	"unity": "2022.3",
 	 "samples": [
         {
