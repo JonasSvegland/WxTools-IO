@@ -6,7 +6,7 @@ namespace WxTools.IO
     [InitializeOnLoad]
     public class SetupProject
     {
-        [MenuItem("WxTools/Setup project for serial communication")]
+        //[MenuItem("WxTools/Setup project for serial communication")]
         private static void Setup()
         {
             /*  const string projectSettingsAssetPath = "ProjectSettings/ProjectSettings.asset";
