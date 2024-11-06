@@ -25,9 +25,12 @@ namespace WxTools.IO
                   Debug.Log("No need to modify project settings");*/
 
             // Kontrollera och ändra API-nivån om den inte är satt till .NET Framework
-            if (PlayerSettings.GetApiCompatibilityLevel(BuildTargetGroup.Standalone) != ApiCompatibilityLevel.NET_Unity_4_8)
+            BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
+            BuildTargetGroup group = BuildPipeline.GetBuildTargetGroup(target);
+
+            if (PlayerSettings.GetApiCompatibilityLevel(group) != ApiCompatibilityLevel.NET_Unity_4_8)
             {
-                PlayerSettings.SetApiCompatibilityLevel(BuildTargetGroup.Standalone, ApiCompatibilityLevel.NET_Unity_4_8);
+                PlayerSettings.SetApiCompatibilityLevel(group, ApiCompatibilityLevel.NET_Unity_4_8);
                 Debug.Log("API Compatibility Level ändrad till .NET Framework");
 
                 // För att säkerställa att Unity tar hänsyn till förändringen direkt

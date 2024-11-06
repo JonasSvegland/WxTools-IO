@@ -2,11 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-#if(NET_UNITY_4_8 || NET_4_6)
 using System.IO.Ports;
-#endif
-using System.Linq;
-using System.Reflection;
 using UnityEngine;
 
 namespace WxTools.IO
@@ -66,13 +62,9 @@ namespace WxTools.IO
         [SerializeField]
         public int arduinoMaximumOutputValue = 1000;
 
-
-
-#if(NET_UNITY_4_8 || NET_4_6)
         private Queue<string> sendBuffer;
         private SerialPort port;
 
-#endif
         /// <summary>
         /// SerialDataRecievedEventHandler
         /// </summary>
@@ -85,7 +77,7 @@ namespace WxTools.IO
         /// </summary>
         public event SerialDataRecievedEventHandler DataRecieved;
 
-#if(NET_UNITY_4_8 || NET_4_6)
+
         void Awake()
         {
             if (sendBuffer == null)
@@ -305,7 +297,7 @@ namespace WxTools.IO
 
          
         }
-#endif
+
         /// <summary>
         /// Enqueue data to be written to the SerialPort
         /// </summary>
@@ -313,10 +305,8 @@ namespace WxTools.IO
         /// <param name="data"></param>
         public void SendData(SerialDataTransciever sender, string data)
         {
-#if(NET_UNITY_4_8 || NET_4_6)
             if (sendBuffer != null)
                 sendBuffer.Enqueue(data);
-#endif
         }
     }
 }
