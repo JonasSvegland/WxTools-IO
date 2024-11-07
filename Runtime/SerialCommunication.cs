@@ -20,6 +20,7 @@ namespace WxTools.IO
         public static string GetProductVersion()
         {
             return "v1.0.7";
+
         }
 
 
