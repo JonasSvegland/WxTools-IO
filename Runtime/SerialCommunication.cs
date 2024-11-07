@@ -19,12 +19,12 @@ namespace WxTools.IO
         /// <returns>product version</returns>
         public static string GetProductVersion()
         {
-            return "v1.1.0";
+            return "v1.0.7";
         }
 
 
         [Space()]
-        //[ReadOnly]
+        [ReadOnly]
         [SerializeField]
         private string version = SerialCommunication.GetProductVersion();
 
